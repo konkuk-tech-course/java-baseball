@@ -23,4 +23,8 @@ public class OutputView {
     public void printDefinition() {
         System.out.println(PrintMessage.DEFINITION.getMessage());
     }
+
+    public void printException(String message) {
+        System.out.println(message);
+    }
 }
