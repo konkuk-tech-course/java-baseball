@@ -22,4 +22,17 @@ public class BaseballGame {
         return gameState.isCleared();
     }
 
+    public void updateBallCount(List<Integer> inputUniqueNumbers) {
+        currentBallCount = referee.callBallCount(secretNumbers, inputUniqueNumbers);
+        if (isThreeStrike()) {
+            gameState = GameState.CLEAR;
+        }
+    }
+    private boolean isThreeStrike() {
+        if (currentBallCount.containsKey(BallCount.STRIKE)) {
+            return currentBallCount.get(BallCount.STRIKE) == 3;
+        }
+        return false;
+    }
+
 }
