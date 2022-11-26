@@ -24,4 +24,13 @@ public class BaseballNumbersTest {
                 .hasMessageContaining("[ERROR]")
                 .hasMessageContaining("1부터 9");
     }
+
+    @Test
+    void When_createNumbersWithDuplicatedNumbers_Expect_IllegalArgumentException() {
+        List<Integer> input = List.of(1, 2, 1);
+        assertThatThrownBy(() -> new BaseballNumbers(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("[ERROR]")
+                .hasMessageContaining("중복");
+    }
 }
