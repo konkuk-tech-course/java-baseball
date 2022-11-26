@@ -32,21 +32,21 @@ public class Baseball {
 
     private void checkSize(List<Integer> numbers) {
         if (numbers.size() != NUMBERS_SIZE) {
-            throw new IllegalArgumentException("3자리 숫자를 입력해주세요.\n");
+            throw new IllegalArgumentException(Error.NUMBER_SIZE_EXCEPTION.toString());
         }
     }
 
     private void checkDuplication(List<Integer> numbers) {
         Set<Integer> numbersSet = new HashSet<>(numbers);
         if (numbersSet.size() != numbers.size()) {
-            throw new IllegalArgumentException("각 숫자는 1이상 9이하로 입력해주세요.\n");
+            throw new IllegalArgumentException(Error.NUMBER_DUPLICATION_EXCEPTION.toString());
         }
     }
 
     private void checkValidRange(List<Integer> numbers) {
         for (int num : numbers) {
             if (1 > num || num > 9) {
-                throw new IllegalArgumentException("각 숫자는 1이상 9이하로 입력해주세요.\n");
+                throw new IllegalArgumentException(Error.NUMBER_RANGE_EXCEPTION.toString());
             }
         }
     }

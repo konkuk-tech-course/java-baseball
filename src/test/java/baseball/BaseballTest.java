@@ -1,6 +1,7 @@
 package baseball;
 
 import baseball.domain.Baseball;
+import baseball.view.Error;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -22,6 +23,6 @@ class BaseballTest {
     void 야구숫자에러처리() {
         assertThatThrownBy(() -> new Baseball(0,1,2))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("[ERROR] 각 숫자는 1이상 9이하로 입력해주세요.");
+                .hasMessage(Error.NUMBER_RANGE_EXCEPTION.toString());
     }
 }

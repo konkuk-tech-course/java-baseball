@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
-public class UserInput {
+public class InputView {
     private final String INT_PATTERN = "^[0-9]+$";
     private final String COMMAND_PATTERN = "^[1-2]$";
     private final String ASK_INPUT_NUMBERS = "숫자를 입력해주세요 : ";
@@ -47,16 +47,18 @@ public class UserInput {
 
     private void vaildNumber(String inputStr) {
         if (!Pattern.matches(INT_PATTERN, inputStr)) {
-            throw new IllegalArgumentException("[ERROR] 숫자를 입력하세요.\n");
+            throw new IllegalArgumentException(Error.NUMBER_PARSE_EXCEPTION.toString());
         }
     }
 
     private List<Integer> getSeparate(int input) {
         List<Integer> numbers = new ArrayList<>();
+
         while (input>0) {
             numbers.add(input%10);
             input /= 10;
         }
+
         return numbers;
     }
 
@@ -78,7 +80,7 @@ public class UserInput {
 
     private void vaildCommand(String inputStr) {
         if (!Pattern.matches(COMMAND_PATTERN, inputStr)) {
-            throw new IllegalArgumentException("[ERROR] 올바른 명령어를 입력해주세요.");
+            throw new IllegalArgumentException(Error.COMMAND_NOT_VAILD_EXCEPTION.toString());
         }
     }
 }
