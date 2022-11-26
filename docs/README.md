@@ -6,11 +6,16 @@
 - [x] 랜덤 숫자 3개 생성 NumberGenerator#numberGenerate()
   - [x] 각 숫자는 중복되지 않는가? Baseball#checkDuplication()
   - [x] 각 숫자는 1~9까지 숫자인가? Baseball#checkValidRange()
-- [] 숫자 입력
-  - [] 각 숫자는 중복되지 않는가? Number
-  - [] 각 숫자는 1~9까지 숫자인가? Number
-  - [] 숫자가 3개인가? Baseball#checkSize()
-  - [] 숫자 인가?
+- [x] 숫자 입력 UserInput#askNumbers()
+  - [x] 숫자로 파싱 UserInput#readInt()
+  - [x] 숫자 배열로 파싱 UserInput#getSeparate()
+  - [x] 받은 숫자로 baseball 반환 UserInput#askInputBaseball()
+  - 예외처리
+    - [x] 숫자인가? UserInput#vaildNumber()
+    - [x] 각 숫자는 중복되지 않는가? Baseball#checkDuplication()
+    - [x] 각 숫자는 1~9까지 숫자인가? Baseball#checkValidRange()
+    - [x] 숫자가 3개인가? Baseball#checkSize()
+    - [x] 예외 발생시 다시 입력
 - [] 정답 숫자와 비교
   - [] 숫자가 같고, 자리수가 다르면 '볼'
   - [] 숫자가 같고, 자리수도 같으면 '스트라이크'
