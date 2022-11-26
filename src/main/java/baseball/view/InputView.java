@@ -14,8 +14,15 @@ public class InputView {
         outputView.printInputUser();
         String userNumber = Console.readLine();
         validate.userNumber(userNumber);
-        List<Integer> userNumbers = convert.convertStringToInteger(userNumber);
+        List<Integer> userNumbers = convert.convertStringToIntegerList(userNumber);
         return userNumbers;
     }
 
+    public int inputDefinition() {
+        outputView.printDefinition();
+        String definition = Console.readLine();
+        validate.definition(definition);
+        int definitionNumber = convert.convertDefinition(definition);
+        return definitionNumber;
+    }
 }

@@ -10,6 +10,9 @@ public class Game {
     static InputView inputView;
     static OutputView outputView;
     static JudgeResult judgeResult =new JudgeResult();
+    static GameDefinition gameDefinition = new GameDefinition();
+    static ComputerNumber computerNumber = new ComputerNumber();
+
     static int strike;
     static int ball;
     static int total;
@@ -19,16 +22,31 @@ public class Game {
     }
 
     public static void start() {
-        ComputerNumber computerNumber = new ComputerNumber();
-        while(true){
-            List<Integer> computerNumbers = computerNumber.getComputerNumber();
+        init();
+        List<Integer> computerNumbers = computerNumber.getComputerNumber();
+        while(strike!=3){
+            System.out.println("computerNumbers = " + computerNumbers);
             List<Integer> userNumbers = inputView.inputUserNumber();
             compareNumbers(computerNumbers, userNumbers);
             judgeResult.judge(strike,ball);
-
         }
-
+        retry();
     }
+
+    private static void retry() {
+        if(Definition()){
+            start();
+        }
+    }
+
+    private static boolean Definition() {
+        boolean judge=false;
+        if(strike==3){
+            judge = gameDefinition.judge(inputView);
+        }
+        return judge;
+    }
+
 
     private static void compareNumbers(List<Integer> computerNumbers, List<Integer> userNumbers) {
         init();
@@ -39,9 +57,9 @@ public class Game {
     }
 
     private static void init() {
-        int total=0;
-        int strike=0;
-        int ball=0;
+        total=0;
+        strike=0;
+        ball=0;
     }
 
 

@@ -1,11 +1,13 @@
 package baseball.domain;
 
+import baseball.view.InputView;
 import baseball.view.OutputView;
 import javax.swing.plaf.RootPaneUI;
 
 public class JudgeResult {
 
     OutputView outputView = new OutputView();
+    InputView inputView = new InputView();
     boolean check = false;
     public void judge(int strike, int ball) {
         initCheck();
@@ -13,14 +15,9 @@ public class JudgeResult {
         check=isNoStrike(strike, ball);
         check=isNoBall(strike, ball);
         check=isNormal(strike, ball);
-        if(strike==3){
-            retry();
-        }
     }
 
-    private void retry() {
 
-    }
 
     private void initCheck() {
         check=false;
@@ -31,7 +28,7 @@ public class JudgeResult {
             outputView.printResult(ball + "볼 " + strike + "스트라이크 ", strike);
             return true;
         }
-        return false;
+        return check;
     }
 
     private boolean isNoBall(int strike, int ball) {
@@ -39,7 +36,7 @@ public class JudgeResult {
             outputView.printResult(strike + "스트라이크 ", strike);
             return true;
         }
-        return false;
+        return check;
     }
 
     private boolean isNoStrike(int strike, int ball) {
@@ -47,7 +44,7 @@ public class JudgeResult {
             outputView.printResult(ball + "볼 ", strike);
             return true;
         }
-        return false;
+        return check;
     }
 
     private boolean isNothing(int strike, int ball) {
@@ -55,7 +52,7 @@ public class JudgeResult {
             outputView.printResult("낫싱", strike);
             return true;
         }
-        return false;
+        return check;
     }
 
 
