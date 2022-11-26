@@ -17,9 +17,11 @@ public class NumberGenerator {
 
     private List<Integer> getNumbers() {
         Set<Integer> numbers = new HashSet<>();
+
         while (numbers.size()<3) {
             numbers.add(pickNumberInRange(1,9));
         }
+
         return new ArrayList<>(numbers);
     }
 
