@@ -9,4 +9,13 @@ public class OutputView {
     public void printInputUser() {
         System.out.print("숫자를 입력해주세요 : ");
     }
+
+    public void printResult(String print, int strike) {
+        System.out.println(print);
+        if(strike==3){
+            System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+        }
+    }
+
+
 }

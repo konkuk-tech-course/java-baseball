@@ -9,6 +9,7 @@ public class Game {
 
     static InputView inputView;
     static OutputView outputView;
+    static JudgeResult judgeResult =new JudgeResult();
     static int strike;
     static int ball;
     static int total;
@@ -23,7 +24,7 @@ public class Game {
             List<Integer> computerNumbers = computerNumber.getComputerNumber();
             List<Integer> userNumbers = inputView.inputUserNumber();
             compareNumbers(computerNumbers, userNumbers);
-
+            judgeResult.judge(strike,ball);
 
         }
 

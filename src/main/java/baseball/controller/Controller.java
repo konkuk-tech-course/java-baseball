@@ -16,7 +16,7 @@ public class Controller {
     public void run() {
         outputView.printStart();
         Game game = new Game(inputView, outputView);
-        Game.start();
+        game.start();
 
     }
 }
