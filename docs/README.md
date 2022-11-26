@@ -1,8 +1,8 @@
 # 숫자야구
 기본적으로 1부터 9까지 서로 다른 수로 이루어진 3자리의 수를 맞추는 게임이다.
 
-- [] 게임 시작 Controller#gameStart
-- [] 야구 게임 시작 메시지 출력 Print
+- [x] 게임 시작 Controller#startGame()
+- [x] 야구 게임 시작 메시지 출력 Print
 - [x] 랜덤 숫자 3개 생성 NumberGenerator#numberGenerate()
   - [x] 각 숫자는 중복되지 않는가? Baseball#checkDuplication()
   - [x] 각 숫자는 1~9까지 숫자인가? Baseball#checkValidRange()
