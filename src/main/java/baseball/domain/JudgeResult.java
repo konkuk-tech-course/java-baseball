@@ -8,7 +8,7 @@ import javax.swing.plaf.RootPaneUI;
 public class JudgeResult {
 
     private final int NONE = 0;
-    OutputView outputView = new OutputView();
+    private OutputView outputView = new OutputView();
 
     boolean check = false;
 

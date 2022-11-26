@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class Convert {
 
 
-    public List<Integer> convertStringToIntegerList(String userNumber) {
+    public List<Integer> convertUserNumber(String userNumber) {
         List<Integer> userNumbers = userNumber.chars().boxed()
             .map(user -> Character.getNumericValue(user)).collect(Collectors.toList());
         return userNumbers;

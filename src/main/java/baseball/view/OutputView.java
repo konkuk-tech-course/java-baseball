@@ -4,6 +4,7 @@ import baseball.constant.PrintMessage;
 
 public class OutputView {
 
+    private final int THREE_STRIKE=3;
     public void printStart() {
         System.out.println(PrintMessage.START.getMessage());
     }
@@ -14,13 +15,9 @@ public class OutputView {
 
     public void printResult(String print, int strike) {
         System.out.println(print);
-        if(strike==3){
+        if(strike==THREE_STRIKE){
             System.out.println(PrintMessage.THREE_STRIKE.getMessage());
         }
-    }
-
-    public void printException(String message){
-        System.out.println(message);
     }
 
     public void printDefinition() {

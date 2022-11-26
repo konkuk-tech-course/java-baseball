@@ -6,8 +6,8 @@ import baseball.view.OutputView;
 
 public class Controller {
 
-    InputView inputView;
-    OutputView outputView;
+    private InputView inputView;
+    private OutputView outputView;
 
     public Controller(InputView inputView, OutputView outputView) {
         this.inputView = inputView;

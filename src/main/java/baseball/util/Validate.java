@@ -1,9 +1,6 @@
 package baseball.util;
 
 import baseball.constant.PrintMessage;
-import baseball.domain.GameDefinition;
-import baseball.view.InputView;
-import baseball.view.OutputView;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -11,7 +8,7 @@ public class Validate {
 
     private final String RETRY = "1";
     private final String GAME_OVER = "2";
-    Pattern pattern = Pattern.compile("^[1-9]*$");
+    private Pattern pattern = Pattern.compile("^[1-9]*$");
 
     public void userNumber(String userNumber) {
         Matcher matcher = pattern.matcher(userNumber);

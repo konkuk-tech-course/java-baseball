@@ -7,14 +7,14 @@ import java.util.List;
 
 public class InputView {
 
-    Validate validate = new Validate();
-    OutputView outputView = new OutputView();
-    Convert convert = new Convert();
+    private Validate validate = new Validate();
+    private OutputView outputView = new OutputView();
+    private Convert convert = new Convert();
     public List<Integer> inputUserNumber(){
         outputView.printInputUser();
         String userNumber = Console.readLine();
         validate.userNumber(userNumber);
-        List<Integer> userNumbers = convert.convertStringToIntegerList(userNumber);
+        List<Integer> userNumbers = convert.convertUserNumber(userNumber);
         return userNumbers;
     }
 

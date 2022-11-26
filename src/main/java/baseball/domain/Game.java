@@ -8,14 +8,11 @@ import java.util.stream.Stream;
 public class Game {
 
     private static final int THREE_STRIKE = 3;
-
     private static InputView inputView;
     private static OutputView outputView;
     private static JudgeResult judgeResult = new JudgeResult();
     private static GameDefinition gameDefinition = new GameDefinition();
     private static ComputerNumber computerNumber = new ComputerNumber();
-
-
     private static int strike;
     private static int ball;
     private static int total;
