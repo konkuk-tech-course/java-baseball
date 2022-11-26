@@ -3,6 +3,8 @@ package baseball.constant;
 import baseball.domain.NumbersProperties;
 
 public enum ErrorMessage {
+    EMPTY("값을 입력하지 않았습니다."),
+    NOT_NUMBER("숫자만 입력해주세요"),
     INVALID_SIZE("숫자의 개수가 " + NumbersProperties.SIZE.get() + "이어야 합니다."),
     INVALID_RANGE(NumbersProperties.MIN_NUMBER.get() + "부터 " +
             NumbersProperties.MAX_NUMBER.get() + "까지의 숫자만 허용됩니다."),
