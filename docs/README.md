@@ -16,15 +16,15 @@
     - [x] 각 숫자는 1~9까지 숫자인가? Baseball#checkValidRange()
     - [x] 숫자가 3개인가? Baseball#checkSize()
     - [x] 예외 발생시 다시 입력
-- [] 정답 숫자와 비교
-  - [] 숫자가 같고, 자리수가 다르면 '볼'
-  - [] 숫자가 같고, 자리수도 같으면 '스트라이크'
-  - [] ball, strike가 둘다 없으면 '낫싱'
-  - [] 에러 발생시 다시 입력받기
-- [] 정답인지 확인
-  - [] 3스트라이크 시 정답
 - [] 게임 재시작
   - [] 1 입력시 재시작 Controller#gameStart
   - [] 2 입력시 종료 Controller#gameEnd
   - [] 그 외 입력시 다시 입력받기
+- [x] 정답 숫자와 비교 BaseballJudge#judgement
+  - [x] 숫자가 같고, 자리수가 다르면 '볼' BaseballJudge#getBall
+  - [x] 숫자가 같고, 자리수도 같으면 '스트라이크' BaseballJudge#getStrike
+  - [x] ball, strike가 둘다 없으면 '낫싱' JudgementType#isNothing
+  - [x] 에러 발생시 다시 입력받기
+- [x] 정답인지 확인 BaseballJudge#checkAnswer
+  - [x] 3스트라이크 시 정답 
 
