@@ -35,4 +35,27 @@ public class BaseballGame {
         return false;
     }
 
+    public String getCurrentBallCount() {
+        StringBuilder ballCount = new StringBuilder();
+        if (!currentBallCount.containsKey(BallCount.BALL) && !currentBallCount.containsKey(BallCount.STRIKE)) {
+            ballCount.append(BallCount.NOTHING.getKorean());
+            return ballCount.toString();
+        }
+        appendCountOfBall(ballCount);
+        appendCountOfStrike(ballCount);
+        return ballCount.toString();
+    }
+    private void appendCountOfBall(StringBuilder ballCount) {
+        if (currentBallCount.containsKey(BallCount.BALL)) {
+            int number = currentBallCount.get(BallCount.BALL);
+            ballCount.append(number).append(BallCount.BALL.getKorean()).append(" ");
+        }
+    }
+    private void appendCountOfStrike(StringBuilder ballCount) {
+        if (currentBallCount.containsKey(BallCount.STRIKE)) {
+            int number = currentBallCount.get(BallCount.STRIKE);
+            ballCount.append(number).append(BallCount.STRIKE.getKorean());
+        }
+    }
+
 }
