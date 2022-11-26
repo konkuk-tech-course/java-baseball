@@ -6,8 +6,10 @@ import java.util.List;
 public class Numbers {
     List<Integer> numbers;
 
-    public Numbers (List<Integer> numbersInput) {
-        numbers = numbersInput;
+    public Numbers (List<Integer> input) {
+        numbers = input;
+    }
+
     }
 
     public List<Integer> getNumbers() {
