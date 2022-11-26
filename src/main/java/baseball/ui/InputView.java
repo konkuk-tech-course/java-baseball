@@ -52,4 +52,17 @@ public class InputView {
         }
     }
 
+    public GameCommand readGameCommand() {
+        OutputView.println(Announcement.INPUT_GAME_COMMAND.getMessage());
+        String input = readLine();
+        validateInteger(input);
+        validateGameCommand(Integer.parseInt(input));
+        return GameCommand.findGameCommand(Integer.parseInt(input));
+    }
+    private void validateGameCommand(int input) {
+        if (!GameCommand.contains(input)) {
+            throw new IllegalArgumentException();
+        }
+    }
+
 }
