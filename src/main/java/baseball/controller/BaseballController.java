@@ -1,23 +1,32 @@
 package baseball.controller;
 
 import baseball.domain.Baseball;
+import baseball.domain.JudgementType;
+import baseball.util.BaseballJudge;
 import baseball.util.NumberGenerator;
-import baseball.view.UserInput;
+import baseball.view.InputView;
 
 public class BaseballController {
 
+    Baseball computer;
+    BaseballJudge baseballJudge;
     NumberGenerator numberGenerator;
-    UserInput userInput;
+    InputView userInput;
+    Boolean endFlag;
 
     public BaseballController() {
         this.numberGenerator = new NumberGenerator();
-        this.userInput = new UserInput();
-        // TODO document why this constructor is empty
+        this.userInput = new InputView();
     }
 
-    public void startGame() {
-        System.out.printf("숫자 야구 게임을 시작합니다.\n");
-        Baseball baseball = userInput.askInputBaseball();
+    public boolean startGame() {
+        initNewGame();
 
+        while (!endFlag) {
+            playRound();
+        }
+        endGame();
+        return false;
+    }
     }
 }
