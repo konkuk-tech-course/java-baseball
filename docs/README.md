@@ -4,12 +4,12 @@
 - [] 게임 시작 Controller#gameStart
 - [] 야구 게임 시작 메시지 출력 Print
 - [] 랜덤 숫자 3개 생성 NumberGenerator#
-  - [x] 각 숫자는 중복되지 않는가? Baseball#checkDuplication
-  - [x] 각 숫자는 1~9까지 숫자인가? Baseball#checkValidRange 
+  - [x] 각 숫자는 중복되지 않는가? Baseball#checkDuplication()
+  - [x] 각 숫자는 1~9까지 숫자인가? Baseball#checkValidRange()
 - [] 숫자 입력
   - [] 각 숫자는 중복되지 않는가? Number
   - [] 각 숫자는 1~9까지 숫자인가? Number
-  - [] 숫자가 3개인가?
+  - [] 숫자가 3개인가? Baseball#checkSize()
   - [] 숫자 인가?
 - [] 정답 숫자와 비교
   - [] 숫자가 같고, 자리수가 다르면 '볼'
