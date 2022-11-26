@@ -1,7 +1,7 @@
 package baseball.domain;
 
+import baseball.util.JudgeResult;
 import baseball.view.InputView;
-import baseball.view.OutputView;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -9,7 +9,6 @@ public class Game {
 
     private static final int THREE_STRIKE = 3;
     private static InputView inputView;
-    private static OutputView outputView;
     private static JudgeResult judgeResult = new JudgeResult();
     private static GameDefinition gameDefinition = new GameDefinition();
     private static ComputerNumber computerNumber = new ComputerNumber();
@@ -17,9 +16,8 @@ public class Game {
     private static int ball;
     private static int total;
 
-    public Game(InputView inputView, OutputView outputView) {
+    public Game(InputView inputView) {
         this.inputView = inputView;
-        this.outputView = outputView;
     }
 
     public static void start() {

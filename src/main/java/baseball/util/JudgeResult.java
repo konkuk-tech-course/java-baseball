@@ -1,9 +1,7 @@
-package baseball.domain;
+package baseball.util;
 
 import baseball.constant.PrintMessage;
-import baseball.view.InputView;
 import baseball.view.OutputView;
-import javax.swing.plaf.RootPaneUI;
 
 public class JudgeResult {
 
@@ -19,7 +17,6 @@ public class JudgeResult {
         check = isNoBall(strike, ball);
         check = isNormal(strike, ball);
     }
-
 
     private void initCheck() {
         check = false;

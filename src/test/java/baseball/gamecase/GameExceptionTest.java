@@ -16,8 +16,6 @@ public class GameExceptionTest extends NsTest {
 
 
 
-
-
     @ParameterizedTest
     @ValueSource(strings = {"1234", "12", "3333333", " ", "asdf", ""})
     @DisplayName("게임 시작시 올 수 있는 예외가 잘 발생하는지 테스트")

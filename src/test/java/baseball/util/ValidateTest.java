@@ -51,17 +51,14 @@ class ValidateTest {
         Assertions.assertThat(wrong).isTrue();
     }
     @ParameterizedTest
-    @ValueSource(strings = {"a","3", "1"})
+    @ValueSource(strings = {"a","3", "4"})
     @DisplayName("게임 재시작시 잘못된 입력 작성 시 오류")
     void definition(String definition) {
         boolean wrong=false;
         if (!definition.equals(RETRY) && !definition.equals(GAME_OVER)) {
-            throw new IllegalArgumentException(PrintMessage.ERROR_DEFINITION.getMessage());
+            wrong = true;
         }
         Assertions.assertThat(wrong).isTrue();
     }
-
-
-
 
 }

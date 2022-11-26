@@ -8,7 +8,9 @@ public class Validate {
 
     private final String RETRY = "1";
     private final String GAME_OVER = "2";
+    private static final int SIZE=3;
     private Pattern pattern = Pattern.compile("^[1-9]*$");
+
 
     public void userNumber(String userNumber) {
         Matcher matcher = pattern.matcher(userNumber);
@@ -24,7 +26,7 @@ public class Validate {
     }
 
     private static void isRightSize(String userNumber) {
-        if (userNumber.length() != 3) {
+        if (userNumber.length() != SIZE) {
             throw new IllegalArgumentException(PrintMessage.ERROR_SIZE.getMessage());
         }
     }
