@@ -2,6 +2,7 @@ package baseball.view;
 
 import baseball.domain.Evaluation;
 import baseball.view.constant.EvaluationStyle;
+import baseball.view.constant.OutputPhrase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,10 @@ public class OutputView {
 
     public static OutputView getInstance() {
         return instance;
+    }
+
+    public void printGameStartPhrase() {
+        System.out.println(OutputPhrase.START_GAME.get());
     }
 
     public void printEvaluation(Map<Evaluation, Integer> evaluation) {
