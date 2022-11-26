@@ -11,7 +11,7 @@ import static camp.nextstep.edu.missionutils.Randoms.*;
 
 public class NumberGenerator {
 
-    public Baseball numberGenerate() {
+    public Baseball baseballGenerate() {
         return new Baseball(getNumbers());
     }
 
