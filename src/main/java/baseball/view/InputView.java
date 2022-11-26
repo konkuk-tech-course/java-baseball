@@ -1,5 +1,7 @@
 package baseball.view;// @ author ninaaano
 
+import baseball.util.Validation;
+
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
 
@@ -12,14 +14,17 @@ public class InputView {
     public InputView() {
     }
 
-    public String inputNumber() {
-
-        return null;
+    public static int inputNumber() {
+        System.out.println(INPUT_NUMBER);
+        //return Validation.validateCheckString(Validation.validateCheckNumber(readLine()));
+        return Validation.validateCheckString(readLine());
     }
 
-    public boolean restart(){
 
-        return false;
+    public static int restart(){
+        System.out.println(GAME_SET);
+        System.out.println(RESTART);
+        return Validation.validateCheckRestart(readLine());
     }
 
 }
