@@ -36,7 +36,7 @@ public class GameController {
                 Evaluation.STRIKE, INIT_VALUE
         );
         while (!gameService.isGameCleared(evaluation)) {
-            tryGuess(answer);
+            evaluation = tryGuess(answer);
         }
     }
 
