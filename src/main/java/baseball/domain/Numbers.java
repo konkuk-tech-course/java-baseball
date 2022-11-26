@@ -1,5 +1,7 @@
 package baseball.domain;
 
+import baseball.constant.ErrorMessage;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -12,11 +14,11 @@ public class Numbers {
 
     private void validate (List<Integer> input) {
         if (isInvalidSize(input)) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ErrorMessage.INVALID_SIZE.get());
         }
 
         if (hasInvalidRangeNumber(input)) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ErrorMessage.INVALID_RANGE.get());
         }
     }
 
