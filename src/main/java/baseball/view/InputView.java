@@ -16,7 +16,8 @@ public class InputView {
 
     public List<Integer> readNumbersInput() {
         System.out.print(InputPhrase.NUMBERS_INPUT.get());
-        String input = Console.readLine();
-
+        String input = Console.readLine().trim();
+        ViewValidator.validateNumbersInput(input);
+        return InputParser.parseNumberInput(input);
     }
 }
