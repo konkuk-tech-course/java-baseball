@@ -5,10 +5,10 @@ import baseball.constant.ErrorMessage;
 import java.util.Collections;
 import java.util.List;
 
-public class Numbers {
-    List<Integer> numbers;
+public class BaseballNumbers {
+    private List<Integer> numbers;
 
-    public Numbers (List<Integer> input) {
+    public BaseballNumbers(List<Integer> input) {
         validate(input);
         numbers = input;
     }
