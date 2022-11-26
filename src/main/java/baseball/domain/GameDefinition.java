@@ -4,9 +4,11 @@ import baseball.view.InputView;
 
 public class GameDefinition {
 
+    private static final int RETRY = 1;
+
     static boolean judge(InputView inputView) {
         int definitionNumber = inputView.inputDefinition();
-        if(definitionNumber==1){
+        if (definitionNumber == RETRY) {
             return true;
         }
         return false;

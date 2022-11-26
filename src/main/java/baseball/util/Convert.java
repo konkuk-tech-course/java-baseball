@@ -11,7 +11,8 @@ public class Convert {
             .map(user -> Character.getNumericValue(user)).collect(Collectors.toList());
         return userNumbers;
     }
-    public int convertDefinition(String definition){
+
+    public int convertDefinition(String definition) {
         int definitionNumber = Integer.parseInt(definition);
         return definitionNumber;
     }
