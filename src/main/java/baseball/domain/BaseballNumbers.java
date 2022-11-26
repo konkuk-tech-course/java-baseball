@@ -32,18 +32,16 @@ public class BaseballNumbers {
     }
 
     private boolean hasInvalidRangeNumber(List<Integer> input) {
-        return input.stream().map(this::isInvalidRange)
-                .findAny()
-                .orElse(false);
+        return input.stream().anyMatch(this::isInvalidRange);
     }
 
     private boolean isInvalidRange(int number) {
-        return number >= NumbersProperties.MIN_NUMBER.get()
-                && number <= NumbersProperties.MAX_NUMBER.get();
+        return number < NumbersProperties.MIN_NUMBER.get()
+                || number > NumbersProperties.MAX_NUMBER.get();
     }
 
     private boolean hasSameNumber(List<Integer> input) {
-        return input.stream().distinct().count() == NumbersProperties.SIZE.get();
+        return input.stream().distinct().count() != NumbersProperties.SIZE.get();
     }
 
     public List<Integer> getNumbers() {
