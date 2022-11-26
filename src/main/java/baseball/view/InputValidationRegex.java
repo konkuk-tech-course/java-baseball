@@ -2,7 +2,8 @@ package baseball.view;
 
 public enum InputValidationRegex {
     EMPTY("^$"),
-    NUMBER("^[0-9]+$");
+    NUMBER("^[0-9]+$"),
+    REPLAY_OPTION("^[12]$");
 
     private final String regex;
 

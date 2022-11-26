@@ -28,4 +28,10 @@ public class ViewValidator {
                 input
         );
     }
+
+    public static void validateReplayOptionInput(String input) {
+        if (!Pattern.matches(InputValidationRegex.REPLAY_OPTION.get(), input)) {
+            throw new IllegalArgumentException(ErrorMessage.INVALID_REPLAY_OPTION.get());
+        }
+    }
 }

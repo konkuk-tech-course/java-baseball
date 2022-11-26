@@ -35,7 +35,7 @@ public class OutputView {
         }
         List<String> evaluationPhraseElements = new ArrayList<>();
         evaluationPhraseElements.add(createBallPhrase(evaluation.get(Evaluation.BALL)));
-        evaluationPhraseElements.add(createBallPhrase(evaluation.get(Evaluation.STRIKE)));
+        evaluationPhraseElements.add(createStrikePhrase(evaluation.get(Evaluation.STRIKE)));
         return String.join(DELIMITER, evaluationPhraseElements)
                 .trim();
     }

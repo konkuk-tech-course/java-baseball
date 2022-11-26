@@ -20,4 +20,11 @@ public class InputView {
         ViewValidator.validateNumbersInput(input);
         return InputParser.parseNumberInput(input);
     }
+
+    public int readReplayOption() {
+        System.out.println(InputPhrase.REPLAY.get());
+        String input = Console.readLine().trim();
+        ViewValidator.validateReplayOptionInput(input);
+        return Integer.parseInt(input);
+    }
 }
