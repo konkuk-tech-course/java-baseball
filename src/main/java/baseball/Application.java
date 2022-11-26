@@ -1,6 +1,6 @@
 package baseball;
 
-import baseball.controller.Controller;
+import baseball.controller.GameController;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 
@@ -9,7 +9,7 @@ public class Application {
         // TODO: 프로그램 구현
         InputView inputView = new InputView();
         OutputView outputView = new OutputView();
-        Controller controller = new Controller(inputView,outputView);
-        controller.run();
+        GameController gameController = new GameController(inputView, outputView);
+        gameController.start();
     }
 }

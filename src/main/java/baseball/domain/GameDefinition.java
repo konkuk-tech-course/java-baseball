@@ -6,7 +6,7 @@ public class GameDefinition {
 
     private static final int RETRY = 1;
 
-    static boolean judge(InputView inputView) {
+    public static boolean judge(InputView inputView) {
         int definitionNumber = inputView.inputDefinition();
         if (definitionNumber == RETRY) {
             return true;

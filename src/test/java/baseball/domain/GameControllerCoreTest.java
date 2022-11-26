@@ -6,7 +6,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class GameCoreTest {
+public class GameControllerCoreTest {
 
     List<Integer> computerNumbers = List.of(1,2,3);
     List<Integer> userNumbers= List.of(2,1,3);

@@ -1,14 +1,18 @@
-package baseball.domain;
+package baseball.controller;
 
+import baseball.domain.ComputerNumber;
+import baseball.domain.GameDefinition;
 import baseball.util.JudgeResult;
 import baseball.view.InputView;
+import baseball.view.OutputView;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class Game {
+public class GameController {
 
     private static final int THREE_STRIKE = 3;
     private static InputView inputView;
+    private static OutputView outputView;
     private static JudgeResult judgeResult = new JudgeResult();
     private static GameDefinition gameDefinition = new GameDefinition();
     private static ComputerNumber computerNumber = new ComputerNumber();
@@ -16,15 +20,15 @@ public class Game {
     private static int ball;
     private static int total;
 
-    public Game(InputView inputView) {
+    public GameController(InputView inputView, OutputView outputView) {
         this.inputView = inputView;
+        this.outputView = outputView;
     }
 
     public static void start() {
         init();
         List<Integer> computerNumbers = computerNumber.getComputerNumber();
         while (strike != THREE_STRIKE) {
-            System.out.println("computerNumbers = " + computerNumbers);
             List<Integer> userNumbers = inputView.inputUserNumber();
             compareNumbers(computerNumbers, userNumbers);
             judgeResult.judge(strike, ball);
