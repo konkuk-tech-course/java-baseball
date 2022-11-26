@@ -1,4 +1,4 @@
-package baseball;
+package baseball.domain;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -6,13 +6,25 @@ import java.util.List;
 import java.util.Set;
 
 public class Baseball {
-    List<Integer> numbers;
+    private List<Integer> numbers;
+    private final int NUMBERS_SIZE = 3;
 
     public Baseball(int num1, int num2, int num3) {
         List<Integer> numbers = Arrays.asList(num1, num2, num3);
+        checkSize(numbers);
         checkValidRange(numbers);
         checkDuplication(numbers);
         this.numbers = Arrays.asList(num1, num2, num3);
+    }
+
+    public List<Integer> getNumbers() {
+        return numbers;
+    }
+
+    private void checkSize(List<Integer> numbers) {
+        if (numbers.size() != NUMBERS_SIZE) {
+            throw new IllegalArgumentException("[ERROR] 3자리 숫자를 입력해주세요.");
+        }
     }
 
     private void checkDuplication(List<Integer> numbers) {
