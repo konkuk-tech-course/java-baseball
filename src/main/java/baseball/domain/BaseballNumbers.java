@@ -21,7 +21,7 @@ public class BaseballNumbers {
         if (hasInvalidRangeNumber(input)) {
             throw new IllegalArgumentException(ErrorMessage.INVALID_RANGE.get());
         }
-        
+
         if (hasSameNumber(input)) {
             throw new IllegalArgumentException(ErrorMessage.DUPLICATED_NUMBER.get());
         }
