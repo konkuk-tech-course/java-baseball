@@ -21,9 +21,13 @@ public class BaseballNumbers {
         if (hasInvalidRangeNumber(input)) {
             throw new IllegalArgumentException(ErrorMessage.INVALID_RANGE.get());
         }
+        
+        if (hasSameNumber(input)) {
+            throw new IllegalArgumentException(ErrorMessage.DUPLICATED_NUMBER.get());
+        }
     }
 
-    private boolean isInvalidSize (List<Integer> input) {
+    private boolean isInvalidSize(List<Integer> input) {
         return input.size() != NumbersProperties.SIZE.get();
     }
 
@@ -33,9 +37,13 @@ public class BaseballNumbers {
                 .orElse(false);
     }
 
-    private boolean isInvalidRange (int number) {
+    private boolean isInvalidRange(int number) {
         return number >= NumbersProperties.MIN_NUMBER.get()
                 && number <= NumbersProperties.MAX_NUMBER.get();
+    }
+
+    private boolean hasSameNumber(List<Integer> input) {
+        return input.stream().distinct().count() == NumbersProperties.SIZE.get();
     }
 
     public List<Integer> getNumbers() {
