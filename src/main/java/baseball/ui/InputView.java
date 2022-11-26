@@ -11,7 +11,16 @@ import static camp.nextstep.edu.missionutils.Console.readLine;
 public class InputView {
 
     public List<Integer> readUniqueNumbers() {
-        OutputView.print(Announcement.INPUT_NUMBERS.getMessage());
+        while(true) {
+            try {
+                OutputView.print(Announcement.INPUT_NUMBERS.getMessage());
+                return inputUniqueNumbers();
+            } catch (IllegalArgumentException illegalArgumentException) {
+                OutputView.println(Announcement.INPUT_NUMBERS_BY_RULE.getMessage());
+            }
+        }
+    }
+    private List<Integer> inputUniqueNumbers() {
         String input = readLine();
         validateInteger(input);
         validateSize(input);
@@ -20,9 +29,8 @@ public class InputView {
         validateRange(threeNumbers);
         return threeNumbers;
     }
-
     private void validateSize(String input) {
-        if (input.length() > 3) {
+        if (input.length() != 3) {
             throw new IllegalArgumentException();
         }
     }
@@ -53,7 +61,17 @@ public class InputView {
     }
 
     public GameCommand readGameCommand() {
-        OutputView.println(Announcement.INPUT_GAME_COMMAND.getMessage());
+        while(true) {
+            try {
+                OutputView.println(Announcement.INPUT_GAME_COMMAND_GUIDE.getMessage());
+                return inputGameCommand();
+            } catch (IllegalArgumentException illegalArgumentException) {
+                OutputView.println(Announcement.INPUT_GAME_COMMAND.getMessage());
+            }
+        }
+    }
+
+    private GameCommand inputGameCommand() {
         String input = readLine();
         validateInteger(input);
         validateGameCommand(Integer.parseInt(input));
