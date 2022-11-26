@@ -9,6 +9,7 @@ public class Numbers {
     List<Integer> numbers;
 
     public Numbers (List<Integer> input) {
+        validate(input);
         numbers = input;
     }
 
