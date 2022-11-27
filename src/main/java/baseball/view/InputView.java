@@ -26,17 +26,17 @@ public class InputView {
         }
     }
 
-    public int inputDefinition() {
+    public int inputDestination() {
         outputView.printDefinition();
-        String definition = Console.readLine();
+        String destination = Console.readLine();
         try {
-            validate.definition(definition);
-            int definitionNumber = convert.convertDefinition(definition);
-            return definitionNumber;
+            validate.destination(destination);
+            int destinationNumber = convert.convertDefinition(destination);
+            return destinationNumber;
 
         }catch (IllegalArgumentException e){
             outputView.printException(e.getMessage());
-            return inputDefinition();
+            return inputDestination();
         }
     }
 }

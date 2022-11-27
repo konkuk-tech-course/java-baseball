@@ -1,6 +1,6 @@
 ## 🚀 기능 구현 목록
 
-- 📌 Controller
+- 📌 GameController
     - [X] 컨트롤러에서 게임 시작하는 곳으로 연결
 
 - 📌 View

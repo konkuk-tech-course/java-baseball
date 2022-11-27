@@ -14,31 +14,31 @@ public class Validate {
 
     public void userNumber(String userNumber) {
         Matcher matcher = pattern.matcher(userNumber);
-        isNumber(matcher);
-        isRightSize(userNumber);
-        isDuplicated(userNumber);
+        validateNumber(matcher);
+        validateSize(userNumber);
+        validateDuplicate(userNumber);
     }
 
-    private static void isDuplicated(String userNumber) {
+    private static void validateDuplicate(String userNumber) {
         if (userNumber.chars().distinct().count() != userNumber.length()) {
             throw new IllegalArgumentException(PrintMessage.ERROR_DUPLICATED.getMessage());
         }
     }
 
-    private static void isRightSize(String userNumber) {
+    private static void validateSize(String userNumber) {
         if (userNumber.length() != SIZE) {
             throw new IllegalArgumentException(PrintMessage.ERROR_SIZE.getMessage());
         }
     }
 
-    private static void isNumber(Matcher matcher) {
+    private static void validateNumber(Matcher matcher) {
         if (!matcher.find()) {
             throw new IllegalArgumentException(PrintMessage.ERROR_RANGE.getMessage());
         }
     }
 
-    public void definition(String definition) {
-        if (!definition.equals(RETRY) && !definition.equals(GAME_OVER)) {
+    public void destination(String destination) {
+        if (!destination.equals(RETRY) && !destination.equals(GAME_OVER)) {
             throw new IllegalArgumentException(PrintMessage.ERROR_DEFINITION.getMessage());
         }
     }

@@ -1,29 +1,24 @@
-package baseball.controller;
+package baseball.domain;
 
-import baseball.domain.ComputerNumber;
-import baseball.domain.GameDefinition;
-import baseball.util.JudgeResult;
+import baseball.util.SelectPrint;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class GameController {
+public class Game {
 
     private static final int THREE_STRIKE = 3;
     private static InputView inputView;
     private static OutputView outputView;
-    private static JudgeResult judgeResult = new JudgeResult();
-    private static GameDefinition gameDefinition = new GameDefinition();
+    private static SelectPrint selectPrint = new SelectPrint();
+    private static GameDestination gameDestination = new GameDestination();
     private static ComputerNumber computerNumber = new ComputerNumber();
     private static int strike;
     private static int ball;
     private static int total;
 
-    public GameController(InputView inputView, OutputView outputView) {
-        this.inputView = inputView;
-        this.outputView = outputView;
-    }
+
 
     public static void start() {
         init();
@@ -31,21 +26,21 @@ public class GameController {
         while (strike != THREE_STRIKE) {
             List<Integer> userNumbers = inputView.inputUserNumber();
             compareNumbers(computerNumbers, userNumbers);
-            judgeResult.judge(strike, ball);
+            selectPrint.select(strike, ball);
         }
         retry();
     }
 
     private static void retry() {
-        if (Definition()) {
+        if (destination()) {
             start();
         }
     }
 
-    private static boolean Definition() {
+    private static boolean destination() {
         boolean judge = false;
         if (strike == THREE_STRIKE) {
-            judge = gameDefinition.judge(inputView);
+            judge = gameDestination.destination(inputView);
         }
         return judge;
     }
