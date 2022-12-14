@@ -1,5 +1,8 @@
 package util;
 
+import static constants.Code.QUIT;
+import static constants.Code.RESTART;
+
 public class Validator {
 
     public static final int INPUT_SIZE = 3;
@@ -31,5 +34,15 @@ public class Validator {
 
     private int getDistinctDuplicateNum(int number) {
         return (int) String.valueOf(number).chars().distinct().count();
+    }
+
+    public void validateCode(int code) {
+        validateLegitCode(code);
+    }
+
+    private static void validateLegitCode(int code) {
+        if (code != RESTART.getCode() && code != QUIT.getCode()) {
+            throw new IllegalArgumentException("[ERROR] 1과 2 중 하나의 수를 입력해 주세요");
+        }
     }
 }
