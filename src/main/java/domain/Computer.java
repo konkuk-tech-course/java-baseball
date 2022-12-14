@@ -30,4 +30,36 @@ public class Computer {
             }
         }
     }
+
+    public Map<Status, Integer> generateResultMessage(int number) {
+        List<Integer> userList = Util.convertNumberToList(number);
+        int containedNumber = getContainedCount(number);
+        // contain 개수 - strike 개수 = ball 개수
+        int strikeCount = calculateStrikeCount(userList);
+        int ballCount = containedNumber - strikeCount;
+        setResult(strikeCount, ballCount);
+        return map;
+    }
+
+    private int getContainedCount(int number) {
+        return (int) String.valueOf(number)
+                .chars()
+                .mapToObj(Character::getNumericValue)
+                .filter(generatedNumber::contains).count();
+    }
+
+    private int calculateStrikeCount(List<Integer> userList) {
+        int strikeCount = 0;
+        for (int i = 0; i < NUM_LENGTH; i++) {
+            if (Objects.equals(generatedNumber.get(i), userList.get(i))) {
+                strikeCount++;
+            }
+        }
+        return strikeCount;
+    }
+
+    private void setResult(int strikeCount, int ballCount) {
+        map.put(BALL, ballCount);
+        map.put(STRIKE, strikeCount);
+    }
 }
