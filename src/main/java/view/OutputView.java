@@ -4,6 +4,7 @@ import constants.Status;
 
 import java.util.Map;
 
+import static constants.GameMessage.*;
 import static constants.Status.BALL;
 import static constants.Status.STRIKE;
 
@@ -13,7 +14,7 @@ public class OutputView {
     private int ballCount;
     private int strikeCount;
     public void printStartMessage() {
-        System.out.println("숫자 야구 게임을 시작합니다.");
+        System.out.println(GAME_START_MESSAGE.getMessage());
     }
 
     public void printGameMessage(Map<Status, Integer> resultMap) {
@@ -27,7 +28,7 @@ public class OutputView {
 
     private void whenNoBall() {
         if (ballCount == 0 && strikeCount > 0) {
-            System.out.println(strikeCount +"스트라이크");
+            System.out.println(strikeCount + STRIKE_MESSAGE.getMessage());
             whenAllMatched();
         }
     }
@@ -40,23 +41,23 @@ public class OutputView {
 
     private void whenBallAndStrikeExists() {
         if (ballCount > 0 && strikeCount > 0) {
-            System.out.println(ballCount + "볼 " + strikeCount + "스트라이크");
+            System.out.println(ballCount + BALL_MESSAGE.getMessage() + " " + strikeCount + STRIKE_MESSAGE.getMessage());
         }
     }
 
     private void whenNoStrike() {
         if (ballCount > 0 && strikeCount == 0) {
-            System.out.println(ballCount+"볼");
+            System.out.println(ballCount + BALL_MESSAGE.getMessage());
         }
     }
 
     private void whenNoBallNoStrike() {
         if (ballCount == 0 && strikeCount == 0) {
-            System.out.println("낫싱");
+            System.out.println(NOTING_MESSAGE.getMessage());
         }
     }
 
     private void printEndMessage() {
-        System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+        System.out.println(GAME_END_MESSAGE.getMessage());
     }
 }

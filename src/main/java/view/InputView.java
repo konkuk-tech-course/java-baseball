@@ -4,6 +4,9 @@ import camp.nextstep.edu.missionutils.Console;
 import util.Util;
 import util.Validator;
 
+import static constants.GameMessage.CODE_INPUT_MESSAGE;
+import static constants.GameMessage.NUMBER_INPUT_MESSAGE;
+
 public class InputView {
 
     private final Validator validator;
@@ -13,14 +16,14 @@ public class InputView {
     }
 
     public int readThreeDifferentNumber() {
-        System.out.print("숫자를 입력해주세요 : ");
+        System.out.print(NUMBER_INPUT_MESSAGE.getMessage());
         int number = Util.convertStringToNumber(Console.readLine());
         validator.validateNumber(number);
         return number;
     }
 
     public int readStartOrEndCode() {
-        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        System.out.println(CODE_INPUT_MESSAGE.getMessage());
         int code = Util.convertStringToNumber(Console.readLine());
         validator.validateCode(code);
         return code;
