@@ -12,16 +12,17 @@ public class InputView {
         this.validator = validator;
     }
 
-    public void readThreeDifferentNumber() {
+    public int readThreeDifferentNumber() {
         System.out.print("숫자를 입력해주세요 : ");
         int number = Util.convertStringToNumber(Console.readLine());
         validator.validateNumber(number);
+        return number;
     }
 
-    public static void main(String[] args) {
-        Validator validator = new Validator();
-        InputView inputView = new InputView(validator);
-        inputView.readThreeDifferentNumber();
+    public int readStartOrEndCode() {
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        int code = Util.convertStringToNumber(Console.readLine());
+        validator.validateCode(code);
+        return code;
     }
-
 }
