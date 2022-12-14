@@ -2,6 +2,7 @@ package util;
 
 import static constants.Code.QUIT;
 import static constants.Code.RESTART;
+import static constants.ExceptionMessage.*;
 
 public class Validator {
 
@@ -14,7 +15,7 @@ public class Validator {
     private void validateNumberLength(int number) {
         int numberLength = getNumberLength(number);
         if (numberLength != INPUT_SIZE) {
-            throw new IllegalArgumentException("[ERROR] 서로 다른 세 자리 수를 입력해 주세요");
+            throw new IllegalArgumentException(NOT_VALID_NUM_MESSAGE.getMessage());
         }
     }
 
@@ -24,7 +25,7 @@ public class Validator {
 
     private void validateDuplicateNumber(int number) {
         if (hasDuplicateNum(number)) {
-            throw new IllegalArgumentException("[ERROR] 중복된 문자를 입력하셨습니다");
+            throw new IllegalArgumentException(DUPLICATE_INPUT_MESSAGE.getMessage());
         }
     }
 
@@ -40,9 +41,13 @@ public class Validator {
         validateLegitCode(code);
     }
 
-    private static void validateLegitCode(int code) {
-        if (code != RESTART.getCode() && code != QUIT.getCode()) {
-            throw new IllegalArgumentException("[ERROR] 1과 2 중 하나의 수를 입력해 주세요");
+    private void validateLegitCode(int code) {
+        if (isValidCode(code)) {
+            throw new IllegalArgumentException(WRONG_CODE_MESSAGE.getMessage());
         }
+    }
+
+    private boolean isValidCode(int code) {
+        return code != RESTART.getCode() && code != QUIT.getCode();
     }
 }
