@@ -25,12 +25,12 @@ public class BaseBallGameController {
     public void playTheGame() {
         outputView.printStartMessage();
         do {
-            Computer computer = new Computer();
-            matchedResultWithComputer(computer);
+            Computer resetedComputer = new Computer();
+            matchingResultWithComputer(resetedComputer);
         } while (inputView.readStartOrEndCode() == RESTART.getCode());
     }
 
-    private void matchedResultWithComputer(Computer computer) {
+    private void matchingResultWithComputer(Computer computer) {
         while (true) {
             int numbers = inputView.readThreeDifferentNumber();
             Map<Status, Integer> resultMap = computer.generateResultMessage(numbers);
